@@ -17,7 +17,7 @@ void get_local_packet(uint8_t (*packet)[11]) {
   (*packet)[8] = consumer >> 8;   // 8th byte
   uint16_t layer_bytes = 0;
   for (int i = 0; i < 16; i++) {
-    if (layers[i].active || remote_layers[i]) {
+    if (layers[i].active) {
       layer_bytes |= (1 << i);
     }
   }
